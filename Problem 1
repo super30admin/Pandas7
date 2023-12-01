@@ -1,0 +1,8 @@
+# Immediate Food Delivery I
+
+import pandas as pd
+
+def food_delivery(delivery: pd.DataFrame) -> pd.DataFrame:
+    total = delivery.shape[0]
+    count = sum(delivery["order_date"] == delivery["customer_pref_delivery_date"])
+    return pd.DataFrame({"immediate_percentage": [round(count/total * 100, 2)]})

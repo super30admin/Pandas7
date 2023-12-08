@@ -1,0 +1,8 @@
+import pandas as pd
+
+def food_delivery(delivery: pd.DataFrame) -> pd.DataFrame:
+    t = len(delivery)
+    p = len(delivery[delivery['order_date']==delivery['customer_pref_delivery_date']])
+    ptg = [round(((p*100)/t),2)]
+    return pd.DataFrame(ptg, columns = ['immediate_percentage'])
+    
